@@ -140,8 +140,8 @@ def get_trainer(cfg, model, tokenizer, dataset):
     logger.info(f"build trainer...")
 
     training_args = TrainingArguments(
-        evaluation_strategy='epoch',
-        save_strategy='epoch',
+        evaluation_strategy=cfg.train.save_strategy,
+        save_strategy=cfg.train.save_strategy,
 
         num_train_epochs=cfg.train.epochs,
         per_device_train_batch_size=cfg.train.batch_size,
@@ -153,6 +153,14 @@ def get_trainer(cfg, model, tokenizer, dataset):
         save_total_limit=cfg.train.save_total_limit,
 
         report_to = list(cfg.train.report_to),
+
+        #추가
+        logging_strategy=cfg.train.save_strategy,
+        save_steps=cfg.train.save_steps,
+        eval_steps=cfg.train.logging_steps,
+        logging_steps=cfg.train.logging_steps, 
+
+        load_best_model_at_end=True,
     )
 
     loss_fn = get_loss_fn(cfg)
@@ -167,6 +175,11 @@ def get_trainer(cfg, model, tokenizer, dataset):
 
     logger.info(f"trainer: {trainer.args}")
     return trainer
+
+def get_config(checkpoint_path):
+    cfg = OmegaConf.load('./config/train.yaml')
+    cfg.train.checkpoint_path = checkpoint_path 
+    return cfg
 
 def main(cfg):
     global logger
@@ -183,9 +196,16 @@ def main(cfg):
     logger.info(dataset)
     
     trainer = get_trainer(cfg, model, tokenizer, dataset)
-    trainer.train()
+    if cfg.train.checkpoint_path:
+        logger.info(f'resume from {cfg.train.checkpoint_path}...')
+        trainer.train(resume_from_checkpoint=True)
+    else:
+        logger.info(f'train new model...')
+        trainer.train()
 
 if __name__ == '__main__':
-    args = parse_args()
-    cfg = get_config(args)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--checkpoint_path', type=str)
+    args = parser.parse_args()
+    cfg = get_config(args.checkpoint_path)
     main(cfg)
