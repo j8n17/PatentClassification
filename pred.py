@@ -134,6 +134,12 @@ def save_submission(cfg, ids, preds, category_df):
     })
     submission.to_csv(cfg.pred.submission_csv, index=False)
 
+def get_config(pretrained_model_name_or_path,submission_csv):
+    cfg = OmegaConf.load('./config/pred.yaml')
+    cfg.pretrained_model_name_or_path = pretrained_model_name_or_path 
+    cfg.submission_csv = submission_csv  
+    return cfg
+
 def main(cfg):
     dataset, category_df = load_data(cfg)
     tokenizer, model = load_model(cfg)
@@ -147,6 +153,9 @@ def main(cfg):
 if __name__ == '__main__':
     global logger
     logger = get_logger()
-    args = parse_args()
-    cfg = get_config(args)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--pretrained_model_name_or_path', type=str)
+    parser.add_argument('--submission_csv', type=str)
+    args = parser.parse_args()
+    cfg = get_config(args.pretrained_model_name_or_path,args.submission_csv)
     main(cfg)
