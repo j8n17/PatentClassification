@@ -15,16 +15,24 @@ train:
   deterministic: False
   gpu_id: "0"
   
+  save_strategy: 'steps'
+  save_steps: 890
+  logging_steps: 89
+  checkpoint_path: "path_to_your_checkpoint"
+
   optim: adamw_torch
   epochs: 100
   batch_size: 64
+  lr_scheduler_type: 'constant_with_warmup'
   learning_rate: 0.00005
   warmup_steps: 200
   early_stop_patience: 5
 
+
+
   output_dir: './results'
   save_total_limit: 3
-  report_to: []
+  report_to: ['tensorboard']
 
   loss:
     name: FocalLoss
