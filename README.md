@@ -94,7 +94,7 @@ baseline
   2. 적절한 lr 찾기 : text 전처리 하기 전 데이터로 실험. 학습시간, 학습률, tensorboard 모니터링 참고
   3. 전처리 한 데이터에 lr 적용하여 학습.
 
-  ##### 품사 only NNG 활용 데이터 셋(한국특허정보원에서 제공하는 dictionary 적용) 
+  품사 only NNG 활용 데이터 셋(한국특허정보원에서 제공하는 dictionary 적용) 
      1. 기호, 영어, 한자 제거
      2. mecab으로 형태소 분리 (한국특허정보원에서 제공한 mecab dictionary 적용)
      3. 유의미한 문자열이라고 판단 가능한 품사 NNG만을 남기고 제거
