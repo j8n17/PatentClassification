@@ -59,7 +59,11 @@ baseline
   - threshold: 1.5~2.0
 ------------------------------
 
-## 👨‍💻 실험 진행
+## 👨‍💻 실험
+### 개발 환경
+  - colab
+  - GPU : cuda
+    
 ### 전처리 파트
    #### text 전처리 과정
      1. html 문서 고유의 문자 제거 `ex) &amp , &lt , \<claim-text/\>`
@@ -76,6 +80,10 @@ baseline
 
 ### 모델 파트
   #### 파이썬 파일 실행 명령어 및 결과
+  1-0. 모듈을 불러오기 위한 설치 진행.
+
+    !pip install requirements
+    
   1-1. 모델 학습 : results 폴더 생성. 학습된 모델 정보 저장.
   
     !python train.py
