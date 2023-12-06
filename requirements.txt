@@ -1,0 +1,12 @@
+omegaconf
+pandas
+torch
+datasets
+transformers
+accelerate
+mecab-python
+konlpy
+tensorflow
+mecab-ko
+mecab-ko-dic
+python-mecab-ko
