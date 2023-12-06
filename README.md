@@ -1,5 +1,5 @@
 # PatentClassification - 5조
-### 팀프로젝트
+### :european_post_office: 팀프로젝트
 - 주제 : 특허 문서 기반 특허 분류
 
 - 목표 : 문서의 text를 분석하여 적합한 분류 번호(SSno)를 출력하는 모델 생성
@@ -10,7 +10,7 @@
      * KorPatELECTRA는 한국특허정보원에서 국내특허문언 text를 pretraining 한 모델
 ---------------
 
-## 파일 구조
+## :memo: 파일 구조
 ```
 data
 ├─  train
@@ -58,7 +58,7 @@ baseline
 - pred.yaml 
   - threshold: 1.5~2.0
  
-## 실험 진행
+## 👨‍💻 실험 진행
 ### 전처리 파트
    #### 1차 전처리 데이터 셋
      1. 기호, 영어, 한자 제거
