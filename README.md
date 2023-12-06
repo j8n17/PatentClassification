@@ -78,15 +78,15 @@ baseline
   #### 파이썬 파일 실행 명령어 및 결과
   1-1. 모델 학습 : results 폴더 생성. 학습된 모델 정보 저장.
   
-    `!python train.py` 
+    !python train.py
   
   1-2. 추가 학습 진행 : 이전에 학습된 모델 정보를 읽어서 추가 학습 가능.
   
-    `!python train.py --checkpoint_path "./results/checkpoint-####`
+    !python train.py --checkpoint_path "./results/checkpoint-####
 
   2. 학습된 모델로 예측
     
-    `!python pred.py --pretrained_model_name_or_path "./results/checkpoint-###" --submission_csv "./results/checkpoint-###"`
+    !python pred.py --pretrained_model_name_or_path "./results/checkpoint-###" --submission_csv "./results/checkpoint-###"
   
   #### 실험
   ```
