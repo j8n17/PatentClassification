@@ -118,7 +118,9 @@ def pred(cfg, dataset, model, tokenizer):
     
     ids = np.concatenate(result_ids)
     logits = np.concatenate(result_logits)
-    preds = (logits > threshold)
+    w=0.99
+    preds = (logits >= w*logits.max(axis=1).reshape(-1, 1))
+
 
     return ids, preds
 
