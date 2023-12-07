@@ -64,8 +64,10 @@ baseline
 - pred.yaml 
   - threshold: 가중치 값을 직접 기입하는 것이 아닌 머신 예측확률에 의한 최종결정을 위함
     ```
-    w=0.99
-    preds = (logits >= w*logits.max(axis=1).reshape(-1, 1))
+    threshold = 1
+    while np.sum(np.sum(logits >= threshold*logits.max(axis=1).reshape(-1, 1), axis=1) == 1) > 8476:
+        threshold -= 0.0005
+    preds = (logits >= threshold*logits.max(axis=1).reshape(-1, 1))
     ```
 ------------------------------
 
