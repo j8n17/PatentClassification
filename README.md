@@ -52,7 +52,8 @@ baseline
 - train.yaml
   - 실험
       - lr_scheduler_type: `constant_with_warmup` or `cosine_with_restarts`
-      - learning_rate: `5e-5`~`8e-4`
+      - KoElectra LR: `5e-5`~`2e-4`
+      - KoPatElectra LR: `1.5e-5`~`3e-5`
       - epoch: `10`~`100`
       - load_best_model_at_end=True
   - 실험 모니터링
