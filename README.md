@@ -76,8 +76,15 @@ baseline
     - GPU : Tesla T4 , Tesla V100-SXM2
     - memory : 12Gi
     - python version : Python 3.10.12
+  - requirements :
+    - omegaconf
+    - pandas
+    - torch
+    - datasets
+    - transformers
+    - accelerate
+    - mecab-python
   - extra tool : notion , google meet , kakaotalk
-  
     
 ### 전처리 파트
    #### text 전처리 과정
