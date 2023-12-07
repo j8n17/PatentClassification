@@ -71,11 +71,12 @@ baseline
 
 ## 👨‍💻 실험
 ### 개발 환경
-  - colab
-  - GPU : T4 , V100
-  - pytorch version
-  - python version
-  - extra tool : notion , google mee
+  - colab 실험 환경
+    - virtual machine : Ubuntu 22.04.3 LTS
+    - GPU : Tesla T4 , Tesla V100-SXM2
+    - memory : 12Gi
+    - python version : Python 3.10.12
+  - extra tool : notion , google meet , kakaotalk
   
     
 ### 전처리 파트
