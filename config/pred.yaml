@@ -8,7 +8,7 @@ model:
 
 pred:
   batch_size: 64
-  threshold: 2.0
+  threshold: 1.0
   submission_csv: 'path_to_your_checkpoint'
 
   device: "cuda:0"
