@@ -72,7 +72,11 @@ baseline
 ## 👨‍💻 실험
 ### 개발 환경
   - colab
-  - GPU : cuda
+  - GPU : T4 , V100
+  - pytorch version
+  - python version
+  - extra tool : notion , google mee
+  
     
 ### 전처리 파트
    #### text 전처리 과정
