@@ -103,9 +103,9 @@ baseline
   3. 전처리 한 데이터에 lr 적용하여 학습.
 
   품사 only NNG 활용 데이터 셋(한국특허정보원에서 제공하는 dictionary 적용) 
-     1. 기호, 영어, 한자 제거
-     2. mecab으로 형태소 분리 (한국특허정보원에서 제공한 mecab dictionary 적용)
-     3. 유의미한 문자열이라고 판단 가능한 품사 NNG만을 남기고 제거
+  1. 기호, 영어, 한자 제거
+  2. mecab으로 형태소 분리 (한국특허정보원에서 제공한 mecab dictionary 적용)
+  3. 유의미한 문자열이라고 판단 가능한 품사 NNG만을 남기고 제거
   ```
 
 ![Untitled](https://github.com/j8n17/PatentClassification/assets/100841549/e3473722-3bff-4653-b3fd-2af1f8fb1891)
